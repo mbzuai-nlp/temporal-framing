@@ -1186,54 +1186,13 @@ h3 {
   letter-spacing: 0.08em;
   color: var(--muted);
 }
-.access-hf-row {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 18px;
-  padding: 6px 10px 7px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: linear-gradient(135deg, #fffbeb 0%, #fff 55%);
-}
-.access-hf-badges {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 6px 10px;
-  width: 100%;
-}
 .access-download-wrap {
   display: flex;
   justify-content: center;
-  margin: 0 0 14px;
+  margin: 0 0 20px;
 }
 .access-hf-download-btn {
   min-width: 200px;
-}
-.access-hf-badge-link {
-  line-height: 0;
-  border-radius: 6px;
-}
-.access-hf-badge-link:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 3px;
-}
-.access-hf-badge-gated {
-  vertical-align: middle;
-  border-radius: 4px;
-}
-.access-hf-row .access-hf-copy {
-  margin: 0;
-  align-self: stretch;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  line-height: 1.38;
-  font-size: 0.88rem;
 }
 .access-datasheet {
   margin: 18px 0 0;
