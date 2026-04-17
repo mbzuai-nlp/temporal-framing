@@ -1189,7 +1189,7 @@ h3 {
 .access-download-wrap {
   display: flex;
   justify-content: center;
-  margin: 0 0 20px;
+  margin: 14px 0 26px;
 }
 .access-hf-download-btn {
   min-width: 200px;
