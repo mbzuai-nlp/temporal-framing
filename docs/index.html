@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temporal Framing in the News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-brand">
+      <div class="container">
+        <a
+          class="hero-acl-banner-link"
+          href="https://2026.aclweb.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="ACL 2026 conference website (opens in new tab)"
+        >
+          <img
+            class="hero-acl-banner"
+            src="assets/acl-2026-banner.png"
+            alt="ACL 2026, San Diego, July 2–7"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="hero-title-row">
+      <div class="container">
+        <h1 class="hero-title">Uncovering Temporal Framing in the News</h1>
+      </div>
+    </div>
+    <div class="hero-art-wrap">
+      <div class="hero-art-frame">
+        <img
+          class="hero-art"
+          src="assets/temporal-framing-hero.png"
+          alt="Illustration of temporal framing across past, present, and future"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+    <div class="hero-lower">
+      <div class="container">
+        <p class="authors authors-line">
+          Tarek Mahmoud<sup>1</sup>, Veronika Solopova<sup>2,3</sup>, Premtim Sahitaj<sup>2,3</sup>, Ariana Sahitaj<sup>2,3</sup>,<br />
+          Max Upravitelev<sup>2,3</sup>, Mervat Abassy<sup>1</sup>, Hana Fatima Shaikh<sup>4</sup>, Neda Foroutan<sup>2</sup>,<br />
+          Vera Schmitt<sup>2,3</sup>, Preslav Nakov<sup>1</sup>
+        </p>
+
+        <div class="affil-wrap">
+          <p class="affil-line"><sup>1</sup> MBZUAI, UAE</p>
+          <p class="affil-line"><sup>2</sup> Technische Universität Berlin, Germany</p>
+          <p class="affil-line"><sup>3</sup> German Research Center for Artificial Intelligence (DFKI), Germany</p>
+          <p class="affil-line"><sup>4</sup> University of Maryland, USA</p>
+        </div>
+
+        <p class="hero-email">
+          <a href="mailto:tarek.mahmoud@mbzuai.ac.ae,preslav.nakov@mbzuai.ac.ae">{tarek.mahmoud, preslav.nakov}@mbzuai.ac.ae</a>
+        </p>
+
+        <p class="subtitle">
+          Understanding the psychology behind time in language, going beyond chronology to study how framing shapes urgency, nostalgia, and meaning, not just <em>when</em> events occur.
+        </p>
+
+        <nav class="hero-nav" aria-label="Page navigation">
+          <a class="btn btn-secondary btn-hero-quiet" href="#overview">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+            Overview
+          </a>
+          <a class="btn btn-secondary btn-hero-quiet" href="#contributions">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
+            Contributions
+          </a>
+          <a class="btn btn-secondary btn-hero-quiet" href="#dataset-snapshot">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 16v-3"/><path d="M12 16v-8"/><path d="M17 16v-5"/></svg>
+            Dataset snapshot
+          </a>
+          <a class="btn btn-secondary btn-hero-quiet" href="#taxonomy">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v3"/><path d="M7 10h10"/><path d="M7 10v8"/><path d="M17 10v8"/><circle cx="7" cy="20" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="20" r="2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Taxonomy
+          </a>
+          <a class="btn btn-primary btn-hero-dataset" href="#access">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+            Dataset access
+          </a>
+          <a class="btn btn-secondary btn-hero-quiet" href="#citation">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-2 1.031V22ZM14 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-2 1.031V22Z"/></svg>
+            Citation
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="overview">
+      <div class="container">
+        <details class="section-details" open>
+          <summary class="section-summary">
+            <svg class="section-summary-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+            <h2>Overview</h2>
+          </summary>
+          <div class="section-details-body">
+        <div class="overview-grid" role="list">
+          <details class="overview-tile overview-tile--a" role="listitem">
+            <summary class="overview-tile-summary">
+              <h3 class="overview-tile-title">How time steers readers</h3>
+            </summary>
+            <p class="overview-tile-text">The way time is <em>framed</em> in the news can induce urgency, nostalgia, or fear, and shape how readers interpret events (beyond factual chronology).</p>
+          </details>
+          <details class="overview-tile overview-tile--b" role="listitem">
+            <summary class="overview-tile-summary">
+              <h3 class="overview-tile-title">From extraction to framing</h3>
+            </summary>
+            <p class="overview-tile-text">Much temporal NLP focuses on <em>when</em> something happened (IE, tense, ordering) or coarse orientation (past vs. future). Less work treats time as <strong>persuasive framing</strong>.</p>
+          </details>
+          <details class="overview-tile overview-tile--c" role="listitem">
+            <summary class="overview-tile-summary">
+              <h3 class="overview-tile-title">What we detect</h3>
+            </summary>
+            <p class="overview-tile-text">Sentence-level <strong>multi-label</strong> detection of <em>temporal framing</em> under an 8-category theory-informed taxonomy.</p>
+          </details>
+          <details class="overview-tile overview-tile--d" role="listitem">
+            <summary class="overview-tile-summary">
+              <h3 class="overview-tile-title">By the numbers</h3>
+            </summary>
+            <p class="overview-tile-text"><strong>458</strong> articles · <strong>20,659</strong> segmented sentences · <strong>2,365</strong> sentences with ≥1 label · <strong>3,030</strong> frame instances (multi-label).</p>
+          </details>
+          <details class="overview-tile overview-tile--e" role="listitem">
+            <summary class="overview-tile-summary">
+              <h3 class="overview-tile-title">Eight ways time persuades</h3>
+            </summary>
+            <p class="overview-tile-text">Eight temporal frames (primacy, recency, urgency, temporal anchoring, nostalgia, temporal contrast, continuity, skeptical) capture how language uses time for persuasion.<br />
+            See the <a href="#taxonomy">Taxonomy</a> section below for definitions, examples, and rhetorical functions.</p>
+          </details>
+          <details class="overview-tile overview-tile--f" role="listitem">
+            <summary class="overview-tile-summary">
+              <h3 class="overview-tile-title">Beyond chronology</h3>
+            </summary>
+            <p class="overview-tile-text">Time is more than ordering events: it is a <strong>rhetorical frame</strong> that shapes urgency, nostalgia, legitimacy, and how audiences weigh past, present, and future, often independently of tense or TIMEX-style extraction. Computational temporal framing supports <strong>media profiling</strong>, <strong>stance and narrative analysis</strong>, and <strong>cross-lingual comparison</strong> of strategies across outlets and events; the same lens applies in <strong>political communication</strong>, <strong>crisis reporting</strong>, and <strong>health messaging</strong>, where temporal appeals routinely steer interpretation and decision-making.</p>
+          </details>
+        </div>
+        <div class="overview-spotlight" role="group" aria-label="Annotated example and ACL paper">
+          <a class="overview-spotlight-tile overview-spotlight-tile--annotated" href="annotated-example.html">
+            <span class="overview-spotlight-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"/></svg>
+            </span>
+            <span class="overview-spotlight-copy">
+              <span class="overview-spotlight-kicker">Full walkthrough</span>
+              <span class="overview-spotlight-title">Annotated example</span>
+              <span class="overview-spotlight-desc">Sentence-level labels on a full news article</span>
+            </span>
+          </a>
+          <button type="button" class="overview-spotlight-tile overview-spotlight-tile--paper js-open-paper" id="openPaper">
+            <span class="overview-spotlight-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h6"/></svg>
+            </span>
+            <span class="overview-spotlight-copy">
+              <span class="overview-spotlight-kicker">Publication</span>
+              <span class="overview-spotlight-title">Paper</span>
+              <span class="overview-spotlight-desc">ACL 2026 proceedings link when available</span>
+            </span>
+          </button>
+        </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section alt" id="contributions">
+      <div class="container">
+        <details class="section-details" open>
+          <summary class="section-summary">
+            <svg class="section-summary-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
+            <h2>Key Contributions</h2>
+          </summary>
+          <div class="section-details-body">
+        <ol class="contrib-grid">
+          <li>
+            <details class="contrib-card contrib-card--1">
+              <summary class="contrib-summary">
+                <span class="contrib-num">1</span>
+                <h3>Novel task</h3>
+              </summary>
+              <ul>
+                <li>Bridges temporal NLP with <strong>cognitive &amp; social-science</strong> framing: <em>why</em> time is invoked, not only <em>when</em> events occur.</li>
+                <li><strong>Sentence-level</strong> multi-label targets: finer than document-only framing, richer than coarse past/future orientation.</li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="contrib-card contrib-card--2">
+              <summary class="contrib-summary">
+                <span class="contrib-num">2</span>
+                <h3>Novel taxonomy</h3>
+              </summary>
+              <ul>
+                <li>Distinct rhetorical “uses of time” (e.g. urgency vs. nostalgia).</li>
+                <li>The taxonomy is <strong>grounded in social-science theory</strong> on framing and temporality, not an ad hoc label set.</li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="contrib-card contrib-card--3">
+              <summary class="contrib-summary">
+                <span class="contrib-num">3</span>
+                <h3>Multilingual dataset</h3>
+              </summary>
+              <ul>
+                <li><strong>458</strong> docs: <strong>238</strong> EN · <strong>220</strong> DE; splits <strong>319</strong> / <strong>63</strong> / <strong>76</strong> (train / dev / test).</li>
+                <li><strong>20,659</strong> segmented sentences; <strong>2,365</strong> labeled (sparse); <strong>335</strong> docs contain ≥1 labeled sentence.</li>
+                <li><strong>High-quality human annotation</strong>: trained annotators (not crowdsourced), shared written guidelines, weekly calibration, adjudication in INCEpTION; agreement measured with Krippendorff’s α (reported in the paper).</li>
+                <li>The paper gives a <strong>detailed corpus analysis</strong>, including <strong>lexical</strong> patterns and <strong>co-occurrence</strong> of frames: how often frames combine, and how they distribute across languages and splits.</li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="contrib-card contrib-card--4">
+              <summary class="contrib-summary">
+                <span class="contrib-num">4</span>
+                <h3>Detailed experimental analysis</h3>
+              </summary>
+              <ul>
+                <li>Baselines span <strong>encoder fine-tuning</strong> (e.g. <strong>XLM-R</strong>, <strong>DeBERTa</strong>-class models, <strong>LLaMA</strong>, <strong>Qwen</strong>) and <strong>LLM zero-shot / in-context</strong> settings, evaluated on the fixed <strong>319/63/76</strong> splits with multi-label <strong>micro/macro F1</strong>.</li>
+                <li>Fine-tuned smaller models can <strong>strongly outperform</strong> much larger zero-shot models; supervised <strong>XLM-R</strong> sits above the plotted <strong>GPT-5.2</strong> reference line, while zero-shot performance scales only modestly with model size.</li>
+              </ul>
+              <figure class="contrib-figure">
+                <img
+                  src="assets/benchmark-micro-f1.png"
+                  alt="Scatter plot: Micro-F1 versus model size (billions of parameters, log scale). Blue circles are zero-shot models; red squares are supervised fine-tuned models. A horizontal dashed line marks GPT-5.2. Fine-tuned Qwen3-8B and LLaMA-3.1-8B achieve the highest Micro-F1; XLM-R outperforms zero-shot LLMs including large Qwen variants."
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="contrib-figure-caption">Micro-F1 vs. model size (log scale): <strong>zero-shot</strong> (circles) vs. <strong>supervised fine-tuning</strong> (squares). See the paper for full experimental setup and numbers.</figcaption>
+              </figure>
+            </details>
+          </li>
+        </ol>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <details class="section-details" open>
+          <summary class="section-summary">
+            <svg class="section-summary-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 16v-3"/><path d="M12 16v-8"/><path d="M17 16v-5"/></svg>
+            <h2 id="dataset-snapshot">Dataset Snapshot</h2>
+          </summary>
+          <div class="section-details-body">
+        <div class="stats stats-wide">
+          <div class="stat stat--a"><span class="stat-value">20,659</span><span class="stat-label">segmented sentences (all docs)</span></div>
+          <div class="stat stat--b"><span class="stat-value">2,365</span><span class="stat-label">sentences with ≥1 frame</span></div>
+          <div class="stat stat--c"><span class="stat-value">3,030</span><span class="stat-label">total frame labels (multi-label instances)</span></div>
+          <div class="stat stat--d"><span class="stat-value">~11.5%</span><span class="stat-label">of sentences carry a frame</span></div>
+          <div class="stat stat--e"><span class="stat-value">~1.28</span><span class="stat-label">avg. frames / labeled sentence (max 5)</span></div>
+          <div class="stat stat--f"><span class="stat-value">319/63/76</span><span class="stat-label">train / dev / test articles <em>(70% / 14% / 16%)</em></span></div>
+          <div class="stat stat--g"><span class="stat-value">238·220</span><span class="stat-label">English · German documents</span></div>
+          <div class="stat stat--h"><span class="stat-value">458</span><span class="stat-label">news articles (full text)</span></div>
+        </div>
+          </div>
+        </details>
+
+        <details class="section-details" open>
+          <summary class="section-summary">
+            <svg class="section-summary-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v3"/><path d="M7 10h10"/><path d="M7 10v8"/><path d="M17 10v8"/><circle cx="7" cy="20" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="20" r="2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <h2 id="taxonomy">Taxonomy</h2>
+          </summary>
+          <div class="section-details-body">
+        <div class="card card--frames">
+            <div class="frame-list">
+                        <div class="frame-grid">
+            <div class="frame-grid-col">
+              <details class="frame-details frame-details--primacy">
+                <summary class="frame-summary frame-summary--rich">
+                  <span class="fs-title">Primacy</span>
+                  <span class="fs-lede">Significance attributed to being first in time.</span>
+                </summary>
+                <div class="frame-body frame-body--nested">
+                  <details class="nest-block nest-block--def">
+                    <summary class="nest-summary nest-summary--def"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="nest-summary-label">Detailed definition</span></span></summary>
+                    <div class="nest-body"><em>Primacy framing assigns significance to temporal precedence, treating leading positions as inherently meaningful. The precedence may be absolute in time (e.g., “the earliest case ever” or “first since the beginning of the record”) or relative to a bounded interval (e.g., “the earliest this year,” “first in this decade,” or “first under this administration”).</em></div>
+                  </details>
+                  <details class="nest-block nest-block--rhet">
+                    <summary class="nest-summary nest-summary--rhet"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="nest-summary-label">Rhetorical function</span></span></summary>
+                    <div class="nest-body"><em>It converts the mere chronology of being first in time into persuasive force, establishing authority, legitimacy, or caution.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--pos">
+                    <summary class="nest-summary nest-summary--pos"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 12 2 2 4-4"/></svg><span class="nest-summary-label">Positive examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“As the first city to adopt this policy, we set the standard for the region.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Being first is explicitly linked to leadership and legitimacy, making temporal precedence the persuasive force.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The collapse of the bank unsettled confidence in the markets to unprecedented levels.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Low market confidence is framed as without precedent, amplifying the perceived danger of the bank’s collapse.</p>
+                      </details>
+                    </div>
+                  </details>
+                  <details class="nest-block nest-block--neg">
+                    <summary class="nest-summary nest-summary--neg"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg><span class="nest-summary-label">Negative examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The vaccine was approved first.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Taken in isolation, this is a chronological report; it does not claim that being first entails special significance. However, if being first plays a persuasive role when the surrounding context is taken into account, then the same sentence could function as primacy framing.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The best-performing vaccine won praise.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">The praise is grounded in quality (performance), not temporal primacy; it resembles primacy in a general sense but lacks the temporal element.</p>
+                      </details>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details class="frame-details frame-details--recency">
+                <summary class="frame-summary frame-summary--rich">
+                  <span class="fs-title">Recency</span>
+                  <span class="fs-lede">Significance attributed to the most recent events.</span>
+                </summary>
+                <div class="frame-body frame-body--nested">
+                  <details class="nest-block nest-block--def">
+                    <summary class="nest-summary nest-summary--def"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="nest-summary-label">Detailed definition</span></span></summary>
+                    <div class="nest-body"><em>Recency framing attributes significance to temporal proximity, treating the latest events as inherently meaningful. The proximity may be absolute in time (e.g., “the most recent ever,” “latest on record”), relative to a bounded interval (e.g., “latest this year,” “most recent this quarter,” “latest under this administration”), or anchored to a salient event (e.g., “just hours after the event,” “a few days after the ceasefire”) where closeness to that event is presented as meaningful.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--rhet">
+                    <summary class="nest-summary nest-summary--rhet"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="nest-summary-label">Rhetorical function</span></span></summary>
+                    <div class="nest-body"><em>It seizes attention through temporal proximity, subtly displaces older evidence without needing to disprove it, or pressures audiences to accept arguments as timely and relevant.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--pos">
+                    <summary class="nest-summary nest-summary--pos"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 12 2 2 4-4"/></svg><span class="nest-summary-label">Positive examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Today’s figures matter most for judging performance.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Freshness is explicitly framed as the reason for relevance.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Just released footage shows what really happened.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">The recency of the footage is used as proof of accuracy and priority.</p>
+                      </details>
+                    </div>
+                  </details>
+                  <details class="nest-block nest-block--neg">
+                    <summary class="nest-summary nest-summary--neg"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg><span class="nest-summary-label">Negative examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“A recent poll shows that 60% of voters support the policy.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Although temporally recent, this is straightforward factual reporting rather than a persuasive appeal to recency.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“In a recent speech, a respected senator criticized the plan and rightfully so.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Although it mentions recency, the persuasive force comes from the senator’s authority and opinion rather than the timing. The temporal marker is incidental, not persuasive.</p>
+                      </details>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details class="frame-details frame-details--urgency">
+                <summary class="frame-summary frame-summary--rich">
+                  <span class="fs-title">Urgency</span>
+                  <span class="fs-lede">Emphasis on limited time or imminent consequences or threats.</span>
+                </summary>
+                <div class="frame-body frame-body--nested">
+                  <details class="nest-block nest-block--def">
+                    <summary class="nest-summary nest-summary--def"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="nest-summary-label">Detailed definition</span></span></summary>
+                    <div class="nest-body"><em>Urgency framing creates a sense of immediacy or imminence by emphasizing limited time, decisive moments, ticking clocks, last chances, ultimatums, or imminent threats.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--rhet">
+                    <summary class="nest-summary nest-summary--rhet"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="nest-summary-label">Rhetorical function</span></span></summary>
+                    <div class="nest-body"><em>It depicts situations as temporally constrained or approaching a critical moment in order to heighten perceived stakes and pressure, or call for immediate action.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--pos">
+                    <summary class="nest-summary nest-summary--pos"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 12 2 2 4-4"/></svg><span class="nest-summary-label">Positive examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Congress must act within 72 hours to prevent a government shutdown.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">A specific deadline creates immediacy and pressure for political decision-making.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“This election is the defining moment for our nation’s future.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Frames the present moment as uniquely decisive and urgent.</p>
+                      </details>
+                    </div>
+                  </details>
+                  <details class="nest-block nest-block--neg">
+                    <summary class="nest-summary nest-summary--neg"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg><span class="nest-summary-label">Negative examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Most voters say healthcare is an important issue.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Conveys significance, but without compressed time or urgency.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Only a limited number of senators support the bill.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Indicates scarcity of support, but not temporal scarcity; no deadline or ticking clock.</p>
+                      </details>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details class="frame-details frame-details--anchoring">
+                <summary class="frame-summary frame-summary--rich">
+                  <span class="fs-title">Temporal Anchoring</span>
+                  <span class="fs-lede">Framing the discussion through the lens of past events.</span>
+                </summary>
+                <div class="frame-body frame-body--nested">
+                  <details class="nest-block nest-block--def">
+                    <summary class="nest-summary nest-summary--def"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="nest-summary-label">Detailed definition</span></span></summary>
+                    <div class="nest-body"><em>Temporal anchoring frames the discussion through the lens of past events that serve as interpretive anchors.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--rhet">
+                    <summary class="nest-summary nest-summary--rhet"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="nest-summary-label">Rhetorical function</span></span></summary>
+                    <div class="nest-body"><em>It activates shared memory and emotional resonance, using familiar reference points to legitimize current perspectives or priorities, or to bias interpretation through invocation of certain events in the past.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--pos">
+                    <summary class="nest-summary nest-summary--pos"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 12 2 2 4-4"/></svg><span class="nest-summary-label">Positive examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“We live in a post-9/11 world where national security must come first, and the congress must take immediate action.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">The landmark date frames a lasting shift in values and policy priorities.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“This legislation represents the boldest reform since the New Deal.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Frames present significance by situating it relative to a landmark era.</p>
+                      </details>
+                    </div>
+                  </details>
+                  <details class="nest-block nest-block--neg">
+                    <summary class="nest-summary nest-summary--neg"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg><span class="nest-summary-label">Negative examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Security policies were tightened after 9/11.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Merely states historical sequence.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“We live in a world where national security must come first, and the congress must take immediate action.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">It is the same example from earlier, but the omission of the temporal reference to 9/11. So while it is persuasive, it is not anchored in time.</p>
+                      </details>
+                    </div>
+                  </details>
+                </div>
+              </details>
+            </div>
+            <div class="frame-grid-col">
+              <details class="frame-details frame-details--nostalgia">
+                <summary class="frame-summary frame-summary--rich">
+                  <span class="fs-title">Nostalgia</span>
+                  <span class="fs-lede">Invocation of a cherished past.</span>
+                </summary>
+                <div class="frame-body frame-body--nested">
+                  <details class="nest-block nest-block--def">
+                    <summary class="nest-summary nest-summary--def"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="nest-summary-label">Detailed definition</span></span></summary>
+                    <div class="nest-body"><em>Nostalgia framing invokes a cherished past as an ideal or standard for the present or future.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--rhet">
+                    <summary class="nest-summary nest-summary--rhet"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="nest-summary-label">Rhetorical function</span></span></summary>
+                    <div class="nest-body"><em>It activates a sense of identity and belonging, calls for restoration and frames it as progress, and softens resistance to a familiar past.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--pos">
+                    <summary class="nest-summary nest-summary--pos"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 12 2 2 4-4"/></svg><span class="nest-summary-label">Positive examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“We must return to the prosperity of the postwar years.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Frames a remembered era of economic success as the standard for present policy.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“We need to revive the spirit of bipartisanship that once defined Congress.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Invokes a remembered political culture as guidance for present reform.</p>
+                      </details>
+                    </div>
+                  </details>
+                  <details class="nest-block nest-block--neg">
+                    <summary class="nest-summary nest-summary--neg"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg><span class="nest-summary-label">Negative examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The city is restoring historical facades downtown.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Reports an action but does not frame the past as a persuasive political ideal.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Many voters say they value tradition.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Expresses a general liking for continuity, but without invoking a shared past as a model for today.</p>
+                      </details>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details class="frame-details frame-details--contrast">
+                <summary class="frame-summary frame-summary--rich">
+                  <span class="fs-title">Temporal Contrast</span>
+                  <span class="fs-lede">Juxtaposition of “then” versus “now.”</span>
+                </summary>
+                <div class="frame-body frame-body--nested">
+                  <details class="nest-block nest-block--def">
+                    <summary class="nest-summary nest-summary--def"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="nest-summary-label">Detailed definition</span></span></summary>
+                    <div class="nest-body"><em>Temporal contrast framing emphasizes change by juxtaposing different time periods such as “then” versus “now.”</em></div>
+                  </details>
+                  <details class="nest-block nest-block--rhet">
+                    <summary class="nest-summary nest-summary--rhet"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="nest-summary-label">Rhetorical function</span></span></summary>
+                    <div class="nest-body"><em>It dramatizes contrast to mark decline, progress, or reversal, thereby justifying action or interpretation.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--pos">
+                    <summary class="nest-summary nest-summary--pos"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 12 2 2 4-4"/></svg><span class="nest-summary-label">Positive examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Once a neglected district, now a thriving hub.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Direct before and after comparison makes temporal change salient.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Twenty years ago tuition was manageable, today it traps students in debt.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Uses then vs. now contrast to highlight deterioration.</p>
+                      </details>
+                    </div>
+                  </details>
+                  <details class="nest-block nest-block--neg">
+                    <summary class="nest-summary nest-summary--neg"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg><span class="nest-summary-label">Negative examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Contrasting 2005 to 2010, the downtown population increased by 20%.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Without full context, this sentence is a factual report of a statistical change without rhetorical contrast.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Urban elites and rural voters have conflicting values, and policymakers must bridge this divide.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Makes a rhetorical appeal based on geographical contrast, not a temporal one.</p>
+                      </details>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details class="frame-details frame-details--continuity">
+                <summary class="frame-summary frame-summary--rich">
+                  <span class="fs-title">Continuity</span>
+                  <span class="fs-lede">Persistence across time.</span>
+                </summary>
+                <div class="frame-body frame-body--nested">
+                  <details class="nest-block nest-block--def">
+                    <summary class="nest-summary nest-summary--def"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="nest-summary-label">Detailed definition</span></span></summary>
+                    <div class="nest-body"><em>Continuity framing expresses persistence across time, encompassing stability, stagnation, momentum, or recurrence.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--rhet">
+                    <summary class="nest-summary nest-summary--rhet"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="nest-summary-label">Rhetorical function</span></span></summary>
+                    <div class="nest-body"><em>It legitimizes through longevity, reassures through endurance, or normalizes repetition by presenting ongoing trajectories or cycles as natural and inevitable. It can also convey discontent, dissatisfaction, or frustration with an unchanging situation.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--pos">
+                    <summary class="nest-summary nest-summary--pos"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 12 2 2 4-4"/></svg><span class="nest-summary-label">Positive examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“For centuries this constitution has safeguarded our liberties.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Longevity is invoked as a direct source of legitimacy, even though whether the constitution truly safeguarded liberties is a matter of interpretation and debate.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Our neutrality has endured for generations, and it continues to serve us well.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Persistence over time is framed as proof of value and stability.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Every election season, the same promises return.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Uses recurrence as both explanation and expression of discontent and critique.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Markets crash and recover; this downturn will pass.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Frames recurrence as reassurance.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Our coalition has grown election after election, and nothing can stop this progress now.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Past trajectory is invoked to suggest inevitability.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“This campaign gains strength with every new supporter who joins us.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Accumulating participation is framed as persuasive momentum.</p>
+                      </details>
+                    </div>
+                  </details>
+                  <details class="nest-block nest-block--neg">
+                    <summary class="nest-summary nest-summary--neg"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg><span class="nest-summary-label">Negative examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The law remains on the books.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Factually reports longevity, but without using it in a persuasive way.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The 1990 law is widely supported by voters.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Legitimacy is attributed to present popularity, not to persistence or longevity over time.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“As every winter, flu cases surge again.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Observes a seasonal pattern but does not employ it rhetorically.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The flu is a serious threat to public health and cannot be ignored.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Makes an evaluative claim without invoking recurrence.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The rally had great energy and everyone was fired up.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Shows force and enthusiasm in the moment, but not a trajectory over time.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“Voter turnout has increased in each of the last three elections.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Without the full context, this sentence merely reports momentum, but without any rhetorical appeals.</p>
+                      </details>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details class="frame-details frame-details--skeptical">
+                <summary class="frame-summary frame-summary--rich">
+                  <span class="fs-title">Skeptical</span>
+                  <span class="fs-lede">Casting doubt about the future.</span>
+                </summary>
+                <div class="frame-body frame-body--nested">
+                  <details class="nest-block nest-block--def">
+                    <summary class="nest-summary nest-summary--def"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="nest-summary-label">Detailed definition</span></span></summary>
+                    <div class="nest-body"><em>Skeptical framing casts doubt about the future by emphasizing uncertainty, risk, pessimism, potential failure, or negative outcomes.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--rhet">
+                    <summary class="nest-summary nest-summary--rhet"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="nest-summary-label">Rhetorical function</span></span></summary>
+                    <div class="nest-body"><em>It highlights vulnerability or doubt to provoke caution, hesitation, or reassessment of confidence in projected outcomes.</em></div>
+                  </details>
+                  <details class="nest-block nest-block--pos">
+                    <summary class="nest-summary nest-summary--pos"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 12 2 2 4-4"/></svg><span class="nest-summary-label">Positive examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The plan may collapse under financial pressure.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Draws attention to risk in order to slow or block action.</p>
+                      </details>
+                      <details class="ex-item ex-item--pos">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The merger could backfire on consumers.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Frames a potential outcome as harmful and uncertain.</p>
+                      </details>
+                    </div>
+                  </details>
+                  <details class="nest-block nest-block--neg">
+                    <summary class="nest-summary nest-summary--neg"><span class="nest-summary-inner"><svg class="nest-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg><span class="nest-summary-label">Negative examples</span></span></summary>
+                    <div class="ex-accordion">
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“The plan costs 2 billion dollars.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">A financial fact, not a speculative projection.</p>
+                      </details>
+                      <details class="ex-item ex-item--neg">
+                        <summary class="ex-sum" title="Expand to show reasoning">
+                          <span class="ex-sum-quote">“As history shows, a ceasefire will eventually be signed.”</span>
+                          <span class="ex-explain-chip">Explain</span>
+                        </summary>
+                        <p class="ex-expl">Treats the outcome as inevitable certainty rather than a contingent risk.</p>
+                      </details>
+                    </div>
+                  </details>
+                </div>
+              </details>
+            </div>
+            </div>
+            </div>
+          </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section alt section--access" id="access">
+      <div class="container">
+        <details class="section-details" open>
+          <summary class="section-summary">
+            <svg class="section-summary-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+            <h2>Dataset Access</h2>
+          </summary>
+          <div class="section-details-body">
+        <div class="card access-card">
+          <div class="access-download-wrap">
+            <a
+              class="btn btn-primary access-hf-download-btn"
+              href="https://huggingface.co/datasets/MBZUAI/temporal-framing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Request Access
+            </a>
+          </div>
+          <div class="access-hf-row">
+            <div class="access-hf-badges">
+              <a
+                href="https://huggingface.co/datasets/MBZUAI/temporal-framing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="access-hf-badge-link"
+                title="Open the dataset page to request access and download files"
+              >
+                <img
+                  src="https://img.shields.io/badge/HuggingFace-Dataset-yellow"
+                  alt="Temporal Framing dataset on Hugging Face"
+                  width="150"
+                  height="20"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </a>
+              <img
+                src="https://img.shields.io/badge/access-gated-orange"
+                alt="Gated access"
+                width="100"
+                height="20"
+                decoding="async"
+                loading="lazy"
+                class="access-hf-badge-gated"
+              />
+            </div>
+            <p class="small muted access-hf-copy">
+              After your access request is approved, use the <strong>Files</strong> tab on the dataset page to download the release. Sign in, accept the dataset terms, and request access for non-commercial research use.
+            </p>
+          </div>
+          <div class="access-files-block">
+            <h3 class="access-files-heading">Dataset files</h3>
+            <ul class="clean-list access-card-files">
+              <li><code>documents.jsonl</code>: article text, URL, split, source, language, publication date</li>
+              <li><code>annotations.jsonl</code>: sentence text + <code>temporal_frames</code> (multi-label)</li>
+            </ul>
+          </div>
+          <div class="access-datasheet">
+            <a class="overview-spotlight-tile overview-spotlight-tile--datasheet" href="datasheet.html">
+              <span class="overview-spotlight-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+              </span>
+              <span class="overview-spotlight-copy">
+                <span class="overview-spotlight-kicker">Documentation</span>
+                <span class="overview-spotlight-title">Datasheet</span>
+                <span class="overview-spotlight-desc">Corpus scope, collection, annotation, and responsible use</span>
+              </span>
+            </a>
+          </div>
+        </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section alt" id="citation">
+      <div class="container">
+        <details class="section-details" open>
+          <summary class="section-summary">
+            <svg class="section-summary-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-2 1.031V22ZM14 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-2 1.031V22Z"/></svg>
+            <h2>Citation</h2>
+          </summary>
+          <div class="section-details-body">
+        <p>If you use this dataset, please cite the accompanying paper.</p>
+        <div class="bibtex-wrap">
+          <div class="bibtex-toolbar">
+            <span class="bibtex-toolbar-label">BibTeX</span>
+            <button type="button" class="bibtex-copy-btn" id="copyBibtex" aria-label="Copy BibTeX citation to clipboard" title="Copy">
+              <svg class="bibtex-copy-svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              <svg class="bibtex-check-svg bibtex-icon-hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <pre class="bibtex" id="bibtexBlock">@inproceedings{mahmoud2026temporal,
+  title     = {Uncovering Temporal Framing in the News},
+  author    = {Mahmoud, Tarek and Solopova, Veronika and Sahitaj, Premtim and Sahitaj, Ariana and Upravitelev, Max and Abassy, Mervat and Shaikh, Hana Fatima and Foroutan, Neda and Schmitt, Vera and Nakov, Preslav},
+  booktitle = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL)},
+  year      = {2026},
+  note      = {To appear}
+}</pre>
+        </div>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <div id="paperModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" id="closePaperBackdrop"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="paperModalTitle">
+      <h3 id="paperModalTitle">Paper</h3>
+      <p class="paper-modal-text">
+        The official ACL paper link will be added once the <strong>ACL 2026</strong> proceedings are published. Until then, see the <a href="datasheet.html">project datasheet</a> and <code>README.md</code> in the release for the full methodology.
+      </p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-primary" id="closePaper">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

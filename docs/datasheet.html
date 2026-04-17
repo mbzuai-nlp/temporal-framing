@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datasheet — Temporal Framing in the News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+</head>
+<body>
+  <header class="anno-page-header">
+    <div class="container">
+      <a href="index.html" class="anno-back-link">← Back to main page</a>
+    </div>
+  </header>
+  <main class="section anno-page-main">
+    <div class="container">
+      <div class="md-rendered-wrap">
+        <div id="md-root" class="md-rendered" aria-live="polite">
+          <p class="md-loading muted">Loading datasheet…</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var root = document.getElementById("md-root");
+      fetch("datasheet.md")
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.text();
+        })
+        .then(function (md) {
+          if (typeof marked === "undefined" || !marked.parse) {
+            throw new Error("marked not available");
+          }
+          marked.setOptions({ gfm: true, breaks: false });
+          root.innerHTML = marked.parse(md);
+        })
+        .catch(function () {
+          root.innerHTML =
+            '<p class="md-error">Could not load <code>datasheet.md</code>. If you opened this file directly from disk, use a local server or deploy the <code>docs/</code> site so the markdown file can be fetched.</p>';
+        });
+    })();
+  </script>
+</body>
+</html>
